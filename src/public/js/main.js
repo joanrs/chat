@@ -1,7 +1,7 @@
 $(function () {
 
     // socket.io client side connection
-    const socket = io.connect('https://chatjrs.herokuapp.com:31649', function (){
+    const socket = io.connect('https://chatjrs.herokuapp.com', function (){
       console.log('conectado socket heroku');
     });
 
