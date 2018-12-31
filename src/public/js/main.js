@@ -1,7 +1,7 @@
 $(function () {
 
     // socket.io client side connection
-    const socket = io.connect('https://chat-i7dnf28tv.now.sh/src/public:'+ process.env.PORT);
+    const socket = io.connect('https://chat-i7dnf28tv.now.sh/src/public:80');
 
     // obtaining DOM elements from the Chat Interface
     const $messageForm = $('#message-form');
@@ -49,11 +49,11 @@ $(function () {
     socket.on('usernames', data => {
       let html = '';
       for(i = 0; i < data.length; i++) {
-        html += `<p><i class="fas fa-user"></i> ${data[i]}</p>`; 
+        html += `<p><i class="fas fa-user"></i> ${data[i]}</p>`;
       }
       $users.html(html);
     });
-    
+
     socket.on('whisper', data => {
       $chat.append(`<p class="whisper"><b>${data.nick}</b>: ${data.msg}</p>`);
     });
