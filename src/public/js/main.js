@@ -1,7 +1,9 @@
 $(function () {
 
     // socket.io client side connection
-    const socket = io.connect('https://chat-i7dnf28tv.now.sh/src/public:80');
+    const socket = io.connect('https://chatjrs.herokuapp.com:80', function (){
+      console.log('conectado socket heroku');
+    });
 
     // obtaining DOM elements from the Chat Interface
     const $messageForm = $('#message-form');
